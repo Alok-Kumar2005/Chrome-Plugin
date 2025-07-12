@@ -4,6 +4,8 @@ import logging
 from src.logger import logging
 import os
 import dagshub
+from dotenv import load_dotenv
+load_dotenv()
 
 import warnings
 warnings.simplefilter("ignore", UserWarning)
@@ -17,13 +19,13 @@ os.environ['MLFLOW_TRACKING_USERNAME'] = dagshub_token
 os.environ['MLFLOW_TRACKING_PASSWORD'] = dagshub_token
 
 dagshub_url = 'https://dagshub.com'
-repo_owner = 'ay747283'
+repo_owner = 'vishwajitsarakpatil'
 repo_name = 'Chrome-Plugin'
 
 mlflow.set_tracking_uri(f'{dagshub_url}/{repo_owner}/{repo_name}.mlflow')
 
-# mlflow.set_tracking_uri('https://dagshub.com/ay747283/Chrome-Plugin.mlflow')
-# dagshub.init(repo_owner='ay747283', repo_name='Chrome-Plugin', mlflow=True)
+mlflow.set_tracking_uri('https://dagshub.com/vishwajitsarakpatil/Chrome-Plugin.mlflow')
+dagshub.init(repo_owner='vishwajitsarakpatil', repo_name='Chrome-Plugin', mlflow=True)
 
 
 def load_model_info(file_path: str) -> dict:

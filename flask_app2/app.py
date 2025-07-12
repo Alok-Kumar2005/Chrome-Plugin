@@ -114,7 +114,7 @@ def fetch_youtube_comments(video_url, api_key):
 # -----------------------------
 # MLflow Model and Vectorizer Setup
 # -----------------------------
-mlflow.set_tracking_uri("https://dagshub.com/ay747283/Chrome-Plugin.mlflow")
+mlflow.set_tracking_uri("https://dagshub.com/vishwajitsarakpatil/Chrome-Plugin.mlflow")
 model_name = "my_model"
 def get_latest_model_version(model_name):
     client = mlflow.MlflowClient()
@@ -127,7 +127,7 @@ model_version = get_latest_model_version(model_name)
 model_uri = f"models:/{model_name}/{model_version}"
 print(f"Fetching model from: {model_uri}")
 model = mlflow.pyfunc.load_model(model_uri)
-vectorizer = pickle.load(open('models/vectorizer.pkl', 'rb'))
+vectorizer = pickle.load(open(r'C:\Users\vishw\OneDrive\Desktop\project2\Chrome-Plugin-2\models\vectorizer.pkl', 'rb'))
 
 # -----------------------------
 # FLASK ROUTES
@@ -147,7 +147,7 @@ def analyze():
         return jsonify({"error": "No video_url provided"}), 400
     
     # Replace with your actual YouTube Data API key
-    api_key = "AIzaSyAkd2c7rnaGcGLTUOE_wD9I0Y4sgNkJaPo"
+    api_key = "AIzaSyDOhIz4rbNMM7VtgsxS0XJWPpVd0XLnFkM"
     
     try:
         # 1) Fetch comments

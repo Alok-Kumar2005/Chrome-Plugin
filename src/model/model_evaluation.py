@@ -11,6 +11,9 @@ import os
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 from src.logger import logging
+from dotenv import load_dotenv
+load_dotenv()
+
 
 
 dagshub_token = os.getenv('CAPSTONE_TEST')
@@ -21,14 +24,14 @@ os.environ['MLFLOW_TRACKING_USERNAME'] = dagshub_token
 os.environ['MLFLOW_TRACKING_PASSWORD'] = dagshub_token
 
 dagshub_url = 'https://dagshub.com'
-repo_owner = 'ay747283'
+repo_owner = 'vishwajitsarakpatil'
 repo_name = 'Chrome-Plugin'
 
 mlflow.set_tracking_uri(f'{dagshub_url}/{repo_owner}/{repo_name}.mlflow')
 
 
-# mlflow.set_tracking_uri('https://dagshub.com/ay747283/Chrome-Plugin.mlflow')
-# dagshub.init(repo_owner='ay747283', repo_name='Chrome-Plugin', mlflow=True)
+mlflow.set_tracking_uri('https://dagshub.com/vishwajitsarakpatil/Chrome-Plugin.mlflow')
+dagshub.init(repo_owner='vishwajitsarakpatil', repo_name='Chrome-Plugin', mlflow=True)
 
 
 def load_model(file_path: str):
@@ -103,7 +106,7 @@ def save_model_info(run_id: str, model_path: str, file_path: str) -> None:
         raise
 
 def main():
-    mlflow.set_experiment("my-dvc-pipeline")
+    mlflow.set_experiment("my-dvc-pipeline-v3")
     with mlflow.start_run() as run:  # Start an MLflow run
         try:
             clf = load_model('./models/model.pkl')
