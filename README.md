@@ -1,9 +1,70 @@
-Chrome-Plugin
-==============================
+# YouTube Sentiment Analysis Chrome Extension
+A full-stack machine learning project that analyzes **YouTube video comments in real time**, providing sentiment insights through a **Chrome extension interface**.
 
-A short description of the project.
 
-Project Organization
+## 📌 Project Overview
+
+This project combines **Machine Learning**, **MLOps**, and **Browser Extension Development** to deliver sentiment analysis for YouTube comments.
+
+With a single click, users can analyze any YouTube video's comment section and instantly view:
+- Sentiment distribution
+- Average ratings
+- Forecast trends
+
+---
+
+## 🚀 Features
+
+- **Real-time Comment Analysis**  
+  Fetch and analyze YouTube comments on demand
+
+- **Sentiment Classification**  
+  Binary classification (Positive / Negative) using Logistic Regression
+
+- **Visual Analytics**  
+  Interactive charts for sentiment distribution and forecasts
+
+- **Chrome Extension**  
+  Seamless integration with the YouTube browsing experience
+
+- **MLOps Pipeline**  
+  End-to-end CI/CD using DVC and MLflow
+
+- **Performance Monitoring**  
+  Prometheus metrics for prediction counts and latency tracking
+
+---
+
+## 🛠️ Tech Stack
+
+### Machine Learning & NLP
+- **ML Framework**: scikit-learn
+- **NLP**: NLTK
+- **Feature Engineering**: Bag of Words (CountVectorizer)
+- **Model**: Logistic Regression (L1 Regularization)
+
+### MLOps & Experimentation
+- **Experiment Tracking**: MLflow
+- **Model Registry**: MLflow Model Registry
+- **Data Versioning**: DVC
+- **Remote Storage**: DagsHub
+
+### Backend & Deployment
+- **Web Framework**: Flask
+- **API Design**: RESTful APIs
+- **Monitoring**: Prometheus Client
+- **External API**: YouTube Data API v3
+
+### Frontend
+- **Browser Extension**: Chrome Manifest V3
+- **Charts**: Chart.js
+- **Styling**: Vanilla CSS
+
+---
+
+
+
+## 📂 Project Structure
 ------------
 
     ├── LICENSE
@@ -54,4 +115,21 @@ Project Organization
 
 --------
 
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+## Clone Project
+```
+https://github.com/Alok-Kumar2005/Chrome-Plugin.git
+```
+
+## Create Environment and Install Dependencies
+```
+uv init
+uv venv
+.venv\Scripts\activate
+uv add -r requirements.txt
+```
+
+## Running the Flask Apps
+```
+cd flask_app
+python app.py
+```
